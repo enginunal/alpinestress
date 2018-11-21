@@ -1,7 +1,6 @@
 FROM alpine:3.7
 
-MAINTAINER Engin UNAL <eunal@link.com.tr>
-
+MAINTAINER Engin UNAL <enginunal@gmail.com>
 
 ENV STRESS_VERSION=1.0.4  \
     SHELL=/bin/bash
@@ -16,5 +15,3 @@ RUN \
   rm -rf /tmp/* /var/tmp/* /var/cache/apk/* /var/cache/distfiles/*
 
 CMD ['/usr/local/bin/stress']
-
-
