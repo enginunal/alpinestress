@@ -10,11 +10,17 @@ to expose the classes of bugs which only or more frequently manifest themselves 
 ```
 docker run -it --rm stress /bin/ash
 ```
-ram stress test
+### ram stress test
+2GB with two workers
 ```
 stress --vm 2 --vm-bytes 2G --timeout 10s
 ```
-cpu stress test
+90% ram load test with one worker
+```
+stress --vm 1 --vm-bytes $(awk '/MemAvailable/{printf "%d\n", $2 * 0.9;}' < /proc/meminfo)k --timeout 20
+```
+
+### cpu stress test
 ```
 stress --cpu 2 --timeout 10s
 ```
