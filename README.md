@@ -27,8 +27,9 @@ stress --cpu 2 --timeout 10s
 
 
 # you can start stress test directly with docker run command
-docker run --rm -it stress --cpu 2 --io 1 --vm 2 --vm-bytes 128M --timeout 10s
-
+docker run --rm -it stress stress --cpu 2 --io 1 --vm 2 --vm-bytes 128M --timeout 10s
+  
+  
 # options
 ```
  -?, --help         show this help statement  
