@@ -1,10 +1,26 @@
 # alpine stress container
 A [stress](https://people.seas.harvard.edu/~apw/stress/) workload app on alpine linux.
 
-# to enter container terminal
-docker run -it --rm stress /bin/ash
+It is not a benchmark. It is a tool used by system administrators to evaluate how well their systems will scale, 
+by kernel programmers to evaluate perceived performance characteristics, and by systems programmers 
+to expose the classes of bugs which only or more frequently manifest themselves when the system is under heavy load.
 
-# you can start stress test with this command
+
+# with interactive shell in container
+```
+docker run -it --rm stress /bin/ash
+```
+ram stress test
+```
+stress --vm 2 --vm-bytes 2G --timeout 10s
+```
+cpu stress test
+```
+stress --cpu 2 --timeout 10s
+```
+
+
+# you can start stress test directly with docker run command
 docker run --rm -it stress --cpu 2 --io 1 --vm 2 --vm-bytes 128M --timeout 10s
 
 # options
